@@ -1,2 +1,4 @@
 rootProject.name = 'gallery'
+include 'web'
+findProject(':web')?.name = 'gallery-web'
 

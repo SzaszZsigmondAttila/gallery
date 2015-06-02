@@ -1,0 +1,9 @@
+group 'ro.szzsa.gallery'
+version '1.0.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'war'
+
+dependencies {
+    testCompile lib.JUNIT
+}
