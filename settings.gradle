@@ -1,4 +1,5 @@
 rootProject.name = 'gallery'
-include 'web'
-findProject(':web')?.name = 'gallery-web'
 
+include ':web'
+
+project(':web').projectDir = "$rootDir/web" as File 

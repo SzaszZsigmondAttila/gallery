@@ -1,5 +1,11 @@
 ext {
-    versions = [JUNIT: '4.12']
+    versions = [JUNIT : '4.12',
+                SPRING: '4.0.6.RELEASE',
+                SERVLET_API: '2.5',
+                JSTL: '1.2']
 
-    lib = [JUNIT: 'junit:junit:'.concat(versions.JUNIT)]
+    lib = [JUNIT : 'junit:junit:'.concat(versions.JUNIT),
+           SPRING_MVC: 'org.springframework:spring-webmvc:'.concat(versions.SPRING),
+           SERVLET_API: 'javax.servlet:servlet-api:'.concat(versions.SERVLET_API),
+           JSTL: 'jstl:jstl:'.concat(versions.JSTL)]
 }
