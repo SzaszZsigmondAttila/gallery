@@ -1,0 +1,12 @@
+apply plugin: 'java'
+apply from: 'ext.gradle'
+
+allprojects {
+    group = 'ro.szzsa.gallery'
+    version = '1.0.0-SNAPSHOT'
+
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+}
