@@ -3,7 +3,12 @@ apply plugin: 'war'
 
 dependencies {
     compile lib.SPRING_MVC
+    compile lib.SPRING_CONTEXT_SUPPORT
+    compile lib.SPRING_TRANSACTION
+    compile lib.QUARTZ
     compile lib.JSTL
-    providedCompile  lib.SERVLET_API
+    compile lib.SERVLET_API
+    compile lib.GOOGLE_DRIVE_API
+    compile lib.GOOGLE_OAUTH2_CLIENT
     testCompile lib.JUNIT
 }

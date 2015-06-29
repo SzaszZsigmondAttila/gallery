@@ -1,11 +1,19 @@
 ext {
-    versions = [JUNIT : '4.12',
-                SPRING: '4.0.6.RELEASE',
-                SERVLET_API: '2.5',
-                JSTL: '1.2']
+    versions = [JUNIT               : '4.12',
+                SPRING              : '4.1.6.RELEASE',
+                QUARTZ              : '2.2.1',
+                SERVLET_API         : '3.1.0',
+                JSTL                : '1.2',
+                GOOGLE_DRIVE_API    : 'v2-rev173-1.20.0',
+                GOOGLE_OAUTH2_CLIENT: '1.20.0']
 
-    lib = [JUNIT : 'junit:junit:'.concat(versions.JUNIT),
-           SPRING_MVC: 'org.springframework:spring-webmvc:'.concat(versions.SPRING),
-           SERVLET_API: 'javax.servlet:servlet-api:'.concat(versions.SERVLET_API),
-           JSTL: 'jstl:jstl:'.concat(versions.JSTL)]
+    lib = [JUNIT                 : 'junit:junit:'.concat(versions.JUNIT),
+           SPRING_MVC            : 'org.springframework:spring-webmvc:'.concat(versions.SPRING),
+           SPRING_CONTEXT_SUPPORT: 'org.springframework:spring-context-support:'.concat(versions.SPRING),
+           SPRING_TRANSACTION    : 'org.springframework:spring-tx:'.concat(versions.SPRING),
+           QUARTZ                : 'org.quartz-scheduler:quartz:'.concat(versions.QUARTZ),
+           SERVLET_API           : 'javax.servlet:javax.servlet-api:'.concat(versions.SERVLET_API),
+           JSTL                  : 'javax.servlet:jstl:'.concat(versions.JSTL),
+           GOOGLE_DRIVE_API      : 'com.google.apis:google-api-services-drive:'.concat(versions.GOOGLE_DRIVE_API),
+           GOOGLE_OAUTH2_CLIENT  : 'com.google.oauth-client:google-oauth-client-jetty:'.concat(versions.GOOGLE_OAUTH2_CLIENT)]
 }
