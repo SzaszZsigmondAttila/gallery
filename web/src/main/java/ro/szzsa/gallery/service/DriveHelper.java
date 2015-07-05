@@ -1,5 +1,7 @@
 package ro.szzsa.gallery.service;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -26,8 +28,7 @@ public class DriveHelper {
 
     private static final String APPLICATION_NAME = "Gallery";
 
-    private static final java.io.File DATA_STORE_DIR =
-        new java.io.File(System.getProperty("user.home"), ".store/gallery");
+    private static final String DATA_STORE_DIR = System.getenv("OPENSHIFT_DATA_DIR") + File.separator + APPLICATION_NAME;
 
     private static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
 
@@ -41,7 +42,7 @@ public class DriveHelper {
 
     public DriveHelper() throws Exception {
         httpTransport = GoogleNetHttpTransport.newTrustedTransport();
-        dataStoreFactory = new FileDataStoreFactory(DATA_STORE_DIR);
+        dataStoreFactory = new FileDataStoreFactory(new File(DATA_STORE_DIR));
         Credential credential = authorize();
         drive = new Drive.Builder(httpTransport, JSON_FACTORY, credential).setApplicationName(APPLICATION_NAME).build();
     }
@@ -63,8 +64,13 @@ public class DriveHelper {
     }
 
     private Credential authorize() throws Exception {
-        GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(JSON_FACTORY,
-                                                                     new InputStreamReader(DriveHelper.class.getResourceAsStream("/client_secrets.json")));
+        String secretFilePath = DATA_STORE_DIR + File.separator + "client_secrets.json";
+        GoogleClientSecrets clientSecrets;
+        GoogleAuthorizationCodeFlow flow;
+        try (InputStreamReader streamReader = new InputStreamReader(new FileInputStream(secretFilePath))) {
+            clientSecrets = GoogleClientSecrets.load(JSON_FACTORY,
+                                                     streamReader);
+        }
         if (clientSecrets.getDetails().getClientId().startsWith("Enter")
             || clientSecrets.getDetails().getClientSecret().startsWith("Enter ")) {
             System.out.println("Enter Client ID and Secret from https://code.google.com/apis/console/?api=drive into "
@@ -72,11 +78,11 @@ public class DriveHelper {
             return null;
         }
 
-        GoogleAuthorizationCodeFlow flow = new GoogleAuthorizationCodeFlow.Builder(
-                                                                                      httpTransport, JSON_FACTORY, clientSecrets,
-                                                                                      Collections.singleton(DriveScopes.DRIVE))
-                                               .setDataStoreFactory(dataStoreFactory)
-                                               .build();
+        flow = new GoogleAuthorizationCodeFlow.Builder(
+                                                          httpTransport, JSON_FACTORY, clientSecrets,
+                                                          Collections.singleton(DriveScopes.DRIVE))
+                   .setDataStoreFactory(dataStoreFactory)
+                   .build();
 
         return new AuthorizationCodeInstalledApp(flow, new LocalServerReceiver()).authorize("user");
     }

@@ -1,4 +1,5 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <t:wrapper title="Video" currentItem="4">
     <div class="container_12">
@@ -12,7 +13,7 @@
                         Cras facilisis, nulla vel viverra auctor, leo magna sodales felis, quis suada.nibh odio ut velit. Proin pharetra
                         luctus diam, a scelerisque eros convallis mertoli noloto.
                         <figure class="video">
-                            <iframe src="/video.jsp/player.vimeo.com/video/74017386"></iframe>
+                            <iframe src="//player.vimeo.com/video/74017386"></iframe>
                         </figure>
                     </div>
                     <div class="video_block">
@@ -22,7 +23,7 @@
                         Cras facilisis, nulla vel viverra auctor, leo magna sodales felis, quis suada.nibh odio ut velit. Proin pharetra
                         luctus diam, a scelerisque eros convallis mertoli noloto.
                         <figure class="video">
-                            <iframe src="/video.jsp/player.vimeo.com/video/47822464"></iframe>
+                            <iframe src="//player.vimeo.com/video/47822464"></iframe>
                         </figure>
                     </div>
                     <div class="video_block">
@@ -32,7 +33,7 @@
                         Cras facilisis, nulla vel viverra auctor, leo magna sodales felis, quis suada.nibh odio ut velit. Proin pharetra
                         luctus diam, a scelerisque eros convallis mertoli noloto.
                         <figure class="video">
-                            <iframe src="/video/player.vimeo.com/video/48438688"></iframe>
+                            <iframe src="//player.vimeo.com/video/48438688"></iframe>
                         </figure>
                     </div>
                 </div>

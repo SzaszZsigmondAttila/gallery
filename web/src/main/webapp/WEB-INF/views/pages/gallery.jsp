@@ -18,8 +18,9 @@
 
                         <div class="gallery">
                             <c:forEach items="${data.images}" var="image">
-                                <c:url var="image" value="http://drive.google.com/thumbnail?id=${image.id}"/>
-                                <a href="${image}" class="gal"><img src="${image}" alt=""></a>
+                                <c:url var="img" value="http://drive.google.com/uc?id=${image.id}"/>
+                                <c:url var="thumbnail" value="http://drive.google.com/thumbnail?id=${image.id}"/>
+                                <a href="${img}" class="gal"><img src="${thumbnail}" alt="${image.id}"></a>
                             </c:forEach>
                             <a href="/resources/images/big7.jpg" class="gal"><img src="/resources/images/page3_img1.jpg" alt=""></a>
                             <a href="/resources/images/big8.jpg" class="gal"><img src="/resources/images/page3_img2.jpg" alt=""></a>

@@ -7,7 +7,7 @@
             <div class="p1_box left cl1">
                 <div class="type"></div>
                 <img src="<c:url value="/resources/images/page1_img1.jpg"/>" alt="">
-                <a href="gallery.jsp" class="bot">Boudoir Beauty <span>7 <br>images</span></a>
+                <a href="<c:url value="/gallery"/>" class="bot">Boudoir Beauty <span>7 <br>images</span></a>
             </div>
             <div class="p1_box left cl2">
                 <div class="type"></div>
@@ -24,24 +24,24 @@
             <div class="p1_box left cl1 pos1">
                 <div class="type"></div>
                 <img src="<c:url value="/resources/images/page1_img4.jpg"/>" alt="">
-                <a href="gallery.jsp" class="bot">Summer Lifestyle<span>10<br>images</span></a>
+                <a href="<c:url value="/gallery"/>" class="bot">Summer Lifestyle<span>10<br>images</span></a>
             </div>
             <div class="p1_box left cl3 pos1">
                 <div class="type"></div>
                 <img src="<c:url value="/resources/images/page1_img6.jpg"/>" alt="">
-                <a href="video.jsp" class="bot">Coexisting with Nature<span><strong class="fa-angle-right fa"></strong></span></a>
+                <a href="<c:url value="/video"/>" class="bot">Coexisting with Nature<span><strong class="fa-angle-right fa"></strong></span></a>
             </div>
         </div>
         <div class="grid_6">
             <div class="p1_box right cl1">
                 <div class="type"></div>
                 <img src="<c:url value="/resources/images/page1_img2.jpg"/>" alt="">
-                <a href="gallery.jsp" class="bot">Pics of Nature <span>8 <br>images</span></a>
+                <a href="<c:url value="/gallery"/>" class="bot">Pics of Nature <span>8 <br>images</span></a>
             </div>
             <div class="p1_box right cl3">
                 <div class="type"></div>
                 <img src="<c:url value="/resources/images/page1_img3.jpg"/>" alt="">
-                <a href="video.jsp" class="bot">Night Sky Video<span><strong class=" fa-angle-right fa"></strong></span></a>
+                <a href="<c:url value="/video"/>" class="bot">Night Sky Video<span><strong class=" fa-angle-right fa"></strong></span></a>
             </div>
             <div class="p1_box right cl4">
                 <div class="type"></div>
