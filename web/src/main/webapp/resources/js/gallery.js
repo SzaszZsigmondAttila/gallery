@@ -1,3 +1,5 @@
 $(document).ready(function () {
-    $('.gallery a.gal').touchTouch();
+    'use strict';
+    $('#blueimp-gallery').data('useBootstrapModal', false);
+    $('#blueimp-gallery').toggleClass('blueimp-gallery-controls', true);
 });
